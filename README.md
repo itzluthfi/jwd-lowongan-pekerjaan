@@ -1,66 +1,155 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Sistem Lowongan Pekerjaan - Test Junior Web Developer
+Proyek Laravel untuk sistem manajemen lowongan pekerjaan yang dikembangkan sebagai bagian dari test Junior Web Developer.
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Persyaratan Sistem
+Sebelum instalasi, pastikan sistem Anda memiliki:
 
-## About Laravel
+- **PHP** >= 8.1
+- **Composer** (PHP Package Manager)
+- **Node.js** dan **NPM** (untuk asset management)
+- **MySQL** atau database lain yang didukung Laravel
+- **Web Server** (Apache/Nginx) atau menggunakan Laragon/XAMPP
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Langkah-langkah Instalasi
+### 1. Clone Repository
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+```bash
+git clone https://github.com/itzluthfi/jwd-lowongan-pekerjaan.git
+cd jwd-lowongan-pekerjaan
+```
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### 2. Install Dependencies PHP
 
-## Learning Laravel
+```bash
+composer install
+```
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### 3. Install Dependencies JavaScript
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+```bash
+npm install
+```
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### 4. Konfigurasi Environment
 
-## Laravel Sponsors
+1. Salin file environment:
+```bash
+copy .env.example .env
+```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+2. Generate application key:
+```bash
+php artisan key:generate
+```
 
-### Premium Partners
+3. Edit file `.env` dan sesuaikan konfigurasi database:
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=jwd_lowongan_pekerjaan
+DB_USERNAME=root
+DB_PASSWORD=
+```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+### 5. Setup Database
 
-## Contributing
+1. Buat database baru dengan nama `jwd_lowongan_pekerjaan`
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+2. Import file SQL yang disediakan:
+```bash
+# Jika menggunakan MySQL command line
+mysql -u root -p jwd_lowongan_pekerjaan < jwd_lowongan_pekerjaan.sql
+```
 
-## Code of Conduct
+   Atau gunakan phpMyAdmin/tool database lainnya untuk import file `jwd_lowongan_pekerjaan.sql`
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+3. Alternatif: Jalankan migration dan seeder:
+```bash
+php artisan migrate
+php artisan db:seed
+```
 
-## Security Vulnerabilities
+### 6. Build Assets
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+```bash
+npm run build
+```
+
+Atau untuk development:
+```bash
+npm run dev
+```
+
+### 7. Jalankan Aplikasi
+
+```bash
+php artisan serve
+```
+
+Aplikasi akan berjalan di: `http://localhost:8000`
+
+
+
+
+## Tentang Proyek
+
+Aplikasi web ini dibuat menggunakan Laravel framework untuk mengelola sistem lowongan pekerjaan dengan fitur-fitur:
+
+- **Autentikasi Pengguna**: Login dan registrasi user
+- **Manajemen Lowongan**: Menampilkan daftar lowongan pekerjaan
+- **Profil Pengguna**: Pengelolaan profil user
+- **Admin Panel**: Panel administrasi untuk mengelola lowongan
+- **Responsive Design**: Interface yang responsif untuk berbagai perangkat
+
+
+
+## Fitur Utama
+
+### Untuk User Publik:
+- **Home Page**: Halaman utama dengan informasi umum
+- **Daftar Lowongan**: Melihat semua lowongan yang tersedia
+- **Detail Lowongan**: Melihat detail lowongan (perlu login)
+- **Contact**: Halaman kontak
+- **Informasi Umum**: Halaman informasi umum
+
+### Untuk User Terdaftar:
+- **Login/Register**: Sistem autentikasi
+- **Profil**: Mengelola profil pribadi
+- **Detail Lowongan**: Akses penuh ke detail lowongan
+
+### Untuk Admin:
+- **Admin Panel**: Panel administrasi
+- **Manajemen Lowongan**: CRUD operasi untuk lowongan
+- **Manajemen User**: Pengelolaan user
+
+## Struktur Database
+
+Proyek ini menggunakan tabel utama:
+- `users`: Data pengguna
+- `lowongans`: Data lowongan pekerjaan
+- `password_reset_tokens`: Token reset password
+- `personal_access_tokens`: Token API (Sanctum)
+- `failed_jobs`: Log pekerjaan yang gagal
+
+
+## Kontribusi
+
+Proyek ini dibuat untuk keperluan test Junior Web Developer. Jika Anda ingin berkontribusi:
+
+1. Fork repository
+2. Buat branch baru untuk fitur Anda
+3. Commit perubahan Anda
+4. Push ke branch
+5. Buat Pull Request
+
+## Kontak
+
+Jika ada pertanyaan atau masalah terkait instalasi, silakan hubungi:
+- **Developer**: Luthfi Shidqi Habibulloh
+- **Email**: [Email Developer]
+- **GitHub**: [itzluthfi](https://github.com/itzluthfi)
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Proyek ini menggunakan [MIT license](https://opensource.org/licenses/MIT).
