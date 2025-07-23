@@ -125,7 +125,7 @@
             )}`;
 
             window.open(url, "_blank");
-            return false; 
+            return false;
         }
     </script>
 @endsection

@@ -10,7 +10,7 @@
             <form class="space-y-6" method="POST" action="{{ route('register.post') }}">
                 @csrf
                 <div>
-                    <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Nama</label>
+                    <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Username</label>
                     <input type="text" id="name" name="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none" required>
                 </div>
                 <div>

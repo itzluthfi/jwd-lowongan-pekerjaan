@@ -24,7 +24,7 @@
                         <option value="">Semua Status</option>
                         <option value="aktif" {{ request('status') == 'aktif' ? 'selected' : '' }}>Aktif</option>
                         <option value="kadaluarsa" {{ request('status') == 'kadaluarsa' ? 'selected' : '' }}>Kadaluarsa</option>
-                    </select>   
+                    </select>
                 </div>
                 <button type="submit" class="bg-primary text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors duration-200 font-medium">
                     <svg class="w-5 h-5 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -113,7 +113,7 @@
                                 <!-- Job Footer -->
                                 <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 pt-4 border-t border-gray-100">
                                     <div class="flex items-center space-x-4 text-xs text-gray-500">
-                                        <span>Diposting {{ \Carbon\Carbon::parse($lowongan->created_at)->diffForHumans() }}</span>
+                                        <span>Diposting {{ \Carbon\Carbon::parse($lowongan->created_at)->locale('id')->diffForHumans() }}</span>
                                         @if ($lowongan->kontak)
                                             <span>•</span>
                                             <span>Kontak: {{ $lowongan->kontak }}</span>

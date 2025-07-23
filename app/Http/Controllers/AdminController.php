@@ -14,7 +14,9 @@ class AdminController extends Controller
         $user = Auth::user();
         $lowongans = Lowongan::orderBy('created_at', 'desc')->paginate(3);
         $users = User::paginate(3);
-        return view('admin.dashboard', compact('user', 'lowongans', 'users'));
+        $totalLowongan = Lowongan::count();
+        $totalUser = User::count();
+        return view('admin.dashboard', compact('user', 'lowongans', 'users', 'totalLowongan', 'totalUser'));
     }
 
     public function lowonganIndex()

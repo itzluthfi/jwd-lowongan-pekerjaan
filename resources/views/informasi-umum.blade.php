@@ -32,7 +32,7 @@
                         Kami berkomitmen untuk membantu Anda menemukan pekerjaan yang sesuai dengan keahlian dan passion Anda.
                     </p>
                     <p class="text-gray-700 mb-4">
-                       JobPortal bisa menjadi pilihan utama untuk
+                        JobPortal bisa menjadi pilihan utama untuk
                         memulai atau mengembangkan karir Anda dari sekarang.
                     </p>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">

@@ -4,11 +4,11 @@
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
         <div class="bg-white rounded-lg shadow p-6">
             <h2 class="text-lg font-semibold mb-2">Total Lowongan</h2>
-            <div class="text-3xl font-bold text-primary">{{ $lowongans->count() }}</div>
+            <div class="text-3xl font-bold text-primary">{{ $totalLowongan }}</div>
         </div>
         <div class="bg-white rounded-lg shadow p-6">
             <h2 class="text-lg font-semibold mb-2">Total User</h2>
-            <div class="text-3xl font-bold text-primary">{{ $users->count() }}</div>
+            <div class="text-3xl font-bold text-primary">{{ $totalUser }}</div>
         </div>
     </div>
     <h2 class="text-xl font-bold mb-4">Lowongan Terbaru</h2>

@@ -9,7 +9,8 @@ use App\Http\Controllers\AdminController;
 // ================= PUBLIC ROUTES =================
 Route::get('/', [UserController::class, 'home'])->name('home');
 Route::get('/lowongan', [LowonganController::class, 'index'])->name('lowongan.index');
-Route::get('/lowongan/{id}', [LowonganController::class, 'show'])->name('lowongan.show');
+Route::get('/lowongan/{id}', [LowonganController::class, 'show'])->middleware('auth')->name('lowongan.show');
+
 Route::get('/contact', [UserController::class, 'contact'])->name('contact');
 Route::get('/informasi-umum', [UserController::class, 'informasiUmum'])->name('informasi-umum');
 
